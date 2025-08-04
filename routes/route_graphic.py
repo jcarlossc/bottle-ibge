@@ -1,6 +1,6 @@
 from bottle import Bottle, template
 from ibge.api_ibge import get_indicadores
-from utils.plot import plotar_grafico
+from utils.plot import plotar_graficos
 import pandas as pd
 
 route_graphics = Bottle()
