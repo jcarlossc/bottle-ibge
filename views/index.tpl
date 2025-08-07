@@ -18,9 +18,6 @@
                 O objetivo é fornecer uma representação gráfica clara e acessível de indicadores como: chegada de turistas internacionais, gastos em educação pública, índice de envelhecimento da população, entre outros. 
                 Todo o sistema é modularizado, com separação de rotas, templates e lógica de geração de gráficos.
             </p>
-            <p class="text-justify">
-                Este projeto serve como exemplo de integração entre <strong>dados públicos</strong> e <strong>visualização informativa</strong> com foco em aplicações reais para análise de dados e desenvolvimento web.
-            </p>
         </div>
         % if imagens:
             <div class="row">
