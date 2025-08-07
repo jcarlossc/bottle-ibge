@@ -3,10 +3,22 @@ from ibge.api_ibge import get_indicadores
 from utils.plot import plotar_grafico
 import pandas as pd
 
+# Subaplicação Bottle responsável por gerar gráficos com dados do IBGE.
 routes_graficos = Bottle()
 
 @routes_graficos.route('/')
 def index():
+    """
+    Rota principal da aplicação, responsável por:
+        - Obter os dados dos indicadores do Brasil a partir da API do IBGE.
+        - Processar e converter os dados em dataframes.
+        - Gerar gráficos com matplotlib a partir dos dados processados.
+        - Renderizar o template HTML ('index.tpl') exibindo os gráficos gerados.
+
+    Retorna:
+        Página HTML renderizada com os gráficos ou mensagem de erro em caso de falha.
+
+    """
     dados = get_indicadores()
     if not dados:
         return template('index', titulo="Erro", imagens=[])
@@ -18,7 +30,7 @@ def index():
         chegada_de_turistas = dados[0]['series'][0]['serie']
         turistas = [(int(k), float(v)) for d in chegada_de_turistas for k, v in d.items() if v and k != "-"]
         df1 = pd.DataFrame(turistas)
-        plotar_grafico(df1[0], df1[1], "Chegada de Turistas", "Ano", "Em Milhões", "grafico_turismo.png")
+        plotar_grafico(df1[0], df1[1], "Chegada de Turistas", "Ano", "(Em Milhões)", "grafico_turismo.png")
         imagens.append("/static/data/grafico_turismo.png")
 
         # Gráfico 2: Gastos públicos com educação
