@@ -4,8 +4,8 @@ from routes.routes_static import routes_static
 
 app = Bottle()
 
-app.mount('/', routes_graficos)
 app.mount('/static', routes_static)
+app.mount('/', routes_graficos)
 app.mount('/data', routes_static)
 
 if __name__ == "__main__":
