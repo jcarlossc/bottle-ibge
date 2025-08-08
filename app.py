@@ -2,6 +2,7 @@ from bottle import Bottle, run
 from routes.routes_graficos import routes_graficos
 from routes.routes_static import routes_static
 
+
 # Criação da aplicação principal Bottle.
 app = Bottle()
 
@@ -12,7 +13,7 @@ app.mount('/static', routes_static)
 app.mount('/', routes_graficos)
 
 # Também monta as rotas para arquivos de dados e imagens em /data
-app.mount('/data', routes_static)
+app.mount('/static', routes_static)
 
 if __name__ == "__main__":
     """
@@ -26,5 +27,5 @@ if __name__ == "__main__":
         - debug=True: ativa o modo de depuração (útil durante o desenvolvimento).
         - reloader=True: reinicia automaticamente o servidor ao detectar mudanças no código.
     """
-    run(app, host='localhost', port=8080, debug=True, reloader=True)
+    run(app, host='localhost', port=8081, debug=True, reloader=True)
 
