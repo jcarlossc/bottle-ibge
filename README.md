@@ -61,9 +61,10 @@ deactivate
 ```
 ---
 
-## ▶️ Acesse no navegador: 
+## ▶️ Acesse no navegador:
+A porta pode ser trocada no arquivo ```app.py```.
 ```
-    http://localhost:8080
+    http://localhost:8081
 ```
 
 ---
