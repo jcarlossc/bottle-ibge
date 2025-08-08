@@ -30,7 +30,7 @@ def index():
         chegada_de_turistas = dados[0]['series'][0]['serie']
         turistas = [(int(k), float(v)) for d in chegada_de_turistas for k, v in d.items() if v and k != "-"]
         df1 = pd.DataFrame(turistas)
-        plotar_grafico(df1[0], df1[1], "Chegada de Turistas", "Ano", "(Em Milhões)", "grafico_turismo.png")
+        plotar_grafico(df1[0], df1[1], "Chegada de Turistas - IBGE", "Ano", "(Em Milhões)", "grafico_turismo.png")
         imagens.append("/static/data/grafico_turismo.png")
 
         # Gráfico 2: Gastos públicos com educação
@@ -60,6 +60,27 @@ def index():
         df2 = pd.DataFrame(pib_per_capita)
         plotar_grafico(df2[0], df2[1], "PIB per capita - IBGE", "Ano", "(Em Mil US$)", "grafico_pib_per_capita.png")
         imagens.append("/static/data/grafico_pib_per_capita.png")
+        
+        # Gráfico 6: Total de Exportações
+        dados_exportacoes = dados[7]['series'][0]['serie']
+        exportacoes = [(int(k), float(v)) for d in dados_exportacoes for k, v in d.items() if v and k != "-"]
+        df2 = pd.DataFrame(exportacoes)
+        plotar_grafico(df2[0], df2[1], "Total de Exportações - IBGE", "Ano", "(em Bilhões de US$)", "grafico_exportacoes.png")
+        imagens.append("/static/data/grafico_exportacoes.png")
+        
+        # Gráfico 7: Total de Importações
+        dados_importacoes = dados[8]['series'][0]['serie']
+        importacoes = [(int(k), float(v)) for d in dados_importacoes for k, v in d.items() if v and k != "-"]
+        df2 = pd.DataFrame(importacoes)
+        plotar_grafico(df2[0], df2[1], "Total de Importações - IBGE", "Ano", "(em Bilhões de US$)", "grafico_importacoes.png")
+        imagens.append("/static/data/grafico_importacoes.png")
+        
+        # Gráfico 7: Total do Pib
+        dados_pib = dados[9]['series'][0]['serie']
+        pib = [(int(k), float(v)) for d in dados_pib for k, v in d.items() if v and k != "-"]
+        df2 = pd.DataFrame(pib)
+        plotar_grafico(df2[0], df2[1], "Total do PIB - IBGE", "Ano", "(em Trilhões de US$)", "grafico_pib.png")
+        imagens.append("/static/data/grafico_pib.png")
 
     except Exception as e:
         print(f"[ERRO] Falha ao processar dados: {e}")
