@@ -6,8 +6,8 @@ Projeto web em Python com o microframework **Bottle**, que consome a **API públ
 
 ## 🚀 Demonstração
 
-![Gráfico de turistas](static/data/turismo_turistas.png)
-![Gráfico de educação](static/data/graficos_educacao.png)
+![Gráfico de turistas](static/data/grafico_turismo.png)
+![Gráfico de educação](static/data/grafico_educacao.png)
 
 ---
 
