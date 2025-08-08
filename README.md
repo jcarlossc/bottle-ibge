@@ -6,8 +6,8 @@ Projeto web em Python com o microframework **Bottle**, que consome a **API públ
 
 ## 🚀 Demonstração
 
-![Gráfico de turistas](static/data/chegada_turistas.png)
-![Gráfico de educação](static/data/gastos_educacao.png)
+![Gráfico de turistas](static/data/turismo_turistas.png)
+![Gráfico de educação](static/data/graficos_educacao.png)
 
 ---
 
@@ -68,7 +68,7 @@ deactivate
 
 ---
 
-📌 Possíveis melhorias
+## 📌 Possíveis melhorias
 - Adicionar filtro para seleção de indicadores.
 - Geração interativa de gráficos com Plotly.
 - Implementar cache local com SQLite.
